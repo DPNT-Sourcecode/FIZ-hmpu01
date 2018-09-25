@@ -105,8 +105,15 @@ public class FizzBuzzSolutionTest {
     	 assertThat(matcher.find(),equalTo(false));
     }
     
-    private boolean isDeluxe(Integer number) {
-    	boolean deluxe = (number>=10) ?  true : false ;
+    private boolean isDeluxe(int value) {
+    	Pattern pattern = Pattern.compile("\\b(\\d)\\1+\\b");
+    	boolean deluxe = false ;
+    	Matcher matcher = pattern.matcher(Integer.toString(value));
+    	
+    	if(value >= 10 && matcher.find()) {
+    		deluxe = true ;
+    	}
+    			
     	return deluxe ;
     }
     
