@@ -73,7 +73,7 @@ public class FizzBuzzSolution {
         	}
     	}
     	
-    	if(!standardNumber && deluxe ) {
+    	if(!standardNumber && isDeluxe(number) ) {
     		if(response.length()==0) {
     			response.append(STR_DELUXE);
     		}else {
