@@ -6,11 +6,16 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 import java.util.stream.Stream;
+
+
 
 import befaster.runner.SolutionNotImplementedException;
 
 public class HelloSolution {
+	
+	private static final Logger LOGGER = LogManager.getLogger(HelloSolution.class.getName());
 	
 	public final static String MESSAGE_FILE = "helloMsg.txt" ;
 	
@@ -18,7 +23,8 @@ public class HelloSolution {
 		throw new SolutionNotImplementedException();
 	}
 
-	private String loadMessage() {
+	private String loadMessage() throws InvalidHelloException {
+		String message = null ;
 		try {
 			Path path = Paths.get(getClass().getClassLoader().getResource(MESSAGE_FILE).toURI());
 
@@ -33,5 +39,7 @@ public class HelloSolution {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return message ;
 	}
 }
