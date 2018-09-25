@@ -22,10 +22,10 @@ public class HelloSolution {
 	public final static String MESSAGE_FILE = "helloMsg.txt" ;
 	
 	public String hello(String friendName) {
-		return loadMessage() ;
+		return loadMessage(friendName) ;
 	}
 
-	private String loadMessage() throws InvalidHelloException {
+	private String loadMessage(String friendName) throws InvalidHelloException {
 		String message = null ;
 		try {
 			Path path = Paths.get(getClass().getClassLoader().getResource(MESSAGE_FILE).toURI());
@@ -35,7 +35,7 @@ public class HelloSolution {
 			lines.forEach(line -> data.append(line));
 			lines.close();
 			
-			message = data.toString();
+			message = String.format(data.toString(), friendName);
 		} catch (URISyntaxException e) {
 			LOGGER.log(Level.SEVERE,"Error locating file "+MESSAGE_FILE,e);
 			throw new InvalidHelloException("Error locating file "+MESSAGE_FILE,e);

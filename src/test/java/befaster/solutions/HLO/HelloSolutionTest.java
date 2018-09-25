@@ -15,13 +15,13 @@ public class HelloSolutionTest {
     }
 
     @Test
-    public void compute_sum() {
-        assertThat(hello.hello(""),equalTo("Hello, World!"));
+    public void helloWorld() {
+        assertThat(hello.hello("Ossie"),equalTo("Hello, Ossie!"));
     }
     
-//    @Test(expected = InvalidHelloException.class)
-//    public void compute_sum_invalid() {
-//    	sum.compute(-10, 200);
-//    }
+    @Test(expected = InvalidHelloException.class)
+    public void helloWorld_invalid() {
+    	hello.hello(null);
+    }
 }
 
