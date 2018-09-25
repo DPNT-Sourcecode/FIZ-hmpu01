@@ -22,7 +22,13 @@ public class HelloSolution {
 	public final static String MESSAGE_FILE = "helloMsg.txt" ;
 	
 	public String hello(String friendName) {
-		return loadMessage(friendName) ;
+		String retMessage = null ;
+		if(friendName !=null && friendName.length()>0) {
+			retMessage = loadMessage(friendName) ;
+		}else {
+			throw new InvalidHelloException("Invalid parameter "+friendName);
+		}
+		return retMessage ;
 	}
 
 	private String loadMessage(String friendName) throws InvalidHelloException {
