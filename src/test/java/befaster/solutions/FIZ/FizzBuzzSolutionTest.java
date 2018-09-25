@@ -87,12 +87,22 @@ public class FizzBuzzSolutionTest {
     }
     
     @Test
-    public void testRegex() {
+    public void testRegexNumbersSame() {
     	 Pattern pattern = Pattern.compile("\\b(\\d)\\1+\\b");
     	 
     	 Matcher matcher = pattern.matcher("44444");
     	 
     	 assertThat(matcher.find(),equalTo(true));
+    }
+    
+    
+    @Test
+    public void testRegexNumbersDifferent() {
+    	 Pattern pattern = Pattern.compile("\\b(\\d)\\1+\\b");
+    	 
+    	 Matcher matcher = pattern.matcher("444244");
+    	 
+    	 assertThat(matcher.find(),equalTo(false));
     }
     
     private boolean isDeluxe(Integer number) {
