@@ -3,6 +3,8 @@ package befaster.solutions.FIZ;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import befaster.runner.SolutionNotImplementedException;
 //- A number is "fizz" if it is divisible by 3 or if it has a 3 in it
@@ -15,15 +17,16 @@ public class FizzBuzzSolution {
 	public static final int FIZZ = 3 ;
 	public static final int BUZZ = 5 ;
 	public static final int DELUXE = 10 ;
+	public static final String STR_FIZZ = "fizz" ;
+	public static final String STR_BUZZ = "buzz" ;
+	public static final String STR_DELUXE = "deluxe" ;
+	
 	
 	private List<Integer> fizzList  ;
 	private List<Integer> buzzList  ;
 	private List<Integer> fizzBuzzList  ;
+	private Pattern deluxePattern = Pattern.compile("\\b(\\d)\\1+\\b");
 	
-	
-	public static final String STR_FIZZ = "fizz" ;
-	public static final String STR_BUZZ = "buzz" ;
-	public static final String STR_DELUXE = "deluxe" ;
 	
 	
 	public FizzBuzzSolution() {
@@ -87,9 +90,12 @@ public class FizzBuzzSolution {
 
     private boolean isDeluxe(int value) {
     	boolean deluxe = false ;
-    	if(value >= DELUXE) {
+    	Matcher matcher = this.deluxePattern.matcher(Integer.toString(value));
+    	
+    	if(value >= DELUXE && matcher.find()) {
     		deluxe = true ;
     	}
+    			
     	return deluxe ;
     }
     
