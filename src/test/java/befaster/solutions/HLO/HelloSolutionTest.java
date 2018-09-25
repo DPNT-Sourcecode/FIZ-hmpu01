@@ -11,17 +11,17 @@ public class HelloSolutionTest {
 
     @Before
     public void setUp() {
-    	hello = new SumSolution();
+    	hello = new HelloSolution();
     }
 
     @Test
     public void compute_sum() {
-        assertThat(sum.compute(1, 1), equalTo(2));
+        assertThat(hello.hello(""),equalTo(""));
     }
     
-    @Test(expected = InvalidSumException.class)
-    public void compute_sum_invalid() {
-    	sum.compute(-10, 200);
-    }
+//    @Test(expected = InvalidSumException.class)
+//    public void compute_sum_invalid() {
+//    	sum.compute(-10, 200);
+//    }
 }
 
