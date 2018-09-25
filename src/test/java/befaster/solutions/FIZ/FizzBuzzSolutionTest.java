@@ -26,32 +26,66 @@ public class FizzBuzzSolutionTest {
     }
     
     private void testValue(int value, String response){
-    	if((value % 3 ==0 && value % 5 == 0) || (containFizzCharNum(value) && containBuzzCharNum(value))) {
-    		assertThat(response,equalTo("fizz buzz"));
-    	}else {
-    		if(value % 3 ==0) {
-    			if(!containBuzzCharNum(value)) {
-    				assertThat(response,equalTo("fizz"));
-    			}else {
-    				assertThat(response,equalTo("fizz buzz"));
-    			}
-    		}else if(value % 5 ==0) {
-    			if(!containFizzCharNum(value)) {
-    				assertThat(response,equalTo("buzz"));
-    			}else {
-    				assertThat(response,equalTo("fizz buzz"));
-    			}
-    		}else {
-    			if(containFizzCharNum(value)) {
-    				assertThat(response,equalTo("fizz"));
-        		}else if(containBuzzCharNum(value)) {
-        			assertThat(response,equalTo("buzz"));
+    	if(isDeluxe(value)) {
+    		if((value % 3 ==0 && value % 5 == 0) || (containFizzCharNum(value) && containBuzzCharNum(value))) {
+        		assertThat(response,equalTo("fizz buzz deluxe"));
+        	}else {
+        		if(value % 3 ==0) {
+        			if(!containBuzzCharNum(value)) {
+        				assertThat(response,equalTo("fizz deluxe"));
+        			}else {
+        				assertThat(response,equalTo("fizz buzz deluxe"));
+        			}
+        		}else if(value % 5 ==0) {
+        			if(!containFizzCharNum(value)) {
+        				assertThat(response,equalTo("buzz deluxe"));
+        			}else {
+        				assertThat(response,equalTo("fizz buzz deluxe"));
+        			}
         		}else {
-        			assertThat(response,equalTo(Integer.toString(value)));
+        			if(containFizzCharNum(value)) {
+        				assertThat(response,equalTo("fizz deluxe"));
+            		}else if(containBuzzCharNum(value)) {
+            			assertThat(response,equalTo("buzz deluxe"));
+            		}else {
+            			assertThat(response,equalTo("deluxe"));
+            		}
         		}
-    		}
+        	}
+    	}else {
+    		if((value % 3 ==0 && value % 5 == 0) || (containFizzCharNum(value) && containBuzzCharNum(value))) {
+        		assertThat(response,equalTo("fizz buzz"));
+        	}else {
+        		if(value % 3 ==0) {
+        			if(!containBuzzCharNum(value)) {
+        				assertThat(response,equalTo("fizz"));
+        			}else {
+        				assertThat(response,equalTo("fizz buzz"));
+        			}
+        		}else if(value % 5 ==0) {
+        			if(!containFizzCharNum(value)) {
+        				assertThat(response,equalTo("buzz"));
+        			}else {
+        				assertThat(response,equalTo("fizz buzz"));
+        			}
+        		}else {
+        			if(containFizzCharNum(value)) {
+        				assertThat(response,equalTo("fizz"));
+            		}else if(containBuzzCharNum(value)) {
+            			assertThat(response,equalTo("buzz"));
+            		}else {
+            			assertThat(response,equalTo(Integer.toString(value)));
+            		}
+        		}
+        	}
     	}
+    	
  
+    }
+    
+    private boolean isDeluxe(Integer number) {
+    	boolean deluxe = (number>=10) ?  true : false ;
+    	return deluxe ;
     }
     
     private boolean containBuzzCharNum(Integer number) {
