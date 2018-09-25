@@ -6,46 +6,66 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
+
 public class FizzBuzzSolutionTest {
     private FizzBuzzSolution fizzBuzz;
+    
 
     @Before
     public void setUp() {
     	fizzBuzz = new FizzBuzzSolution();
-    }
-    
-    @Test
-    public void compute_fizzLoop() {
-        for(int i=1 ; i<10000; i++) {
-        	System.out.println(i + " "+fizzBuzz.fizzBuzz(i));
-        }
-    }
 
-//    @Test
-//    public void compute_fizzbuzz() {
-//        assertThat(fizzBuzz.fizzBuzz(15), equalTo("fizz buzz"));
-//    }
-    
-    @Test
-    public void compute_fizz() {
-        assertThat(fizzBuzz.fizzBuzz(564), equalTo("fizz"));
     }
     
     @Test
-    public void compute_buzz() {
-        assertThat(fizzBuzz.fizzBuzz(5), equalTo("buzz"));
+    public void printoOut(){
+    	for(int i=1; i <10000;i++) {
+    		System.out.println(i+" "+fizzBuzz.fizzBuzz(i));
+    		testValue(i,fizzBuzz.fizzBuzz(i));
+    	}
     }
     
-    
-    @Test
-    public void compute() {
-        assertThat(fizzBuzz.fizzBuzz(-2), equalTo("-2"));
+    private void testValue(int value, String response){
+    	if((value % 3 ==0 && value % 5 == 0) || (containFizzCharNum(value) && containBuzzCharNum(value))) {
+    		assertThat(response,equalTo("fizz buzz"));
+    	}else {
+    		if(value % 3 ==0) {
+    			if(!containBuzzCharNum(value)) {
+    				assertThat(response,equalTo("fizz"));
+    			}else {
+    				assertThat(response,equalTo("fizz buzz"));
+    			}
+    		}else if(value % 5 ==0) {
+    			if(!containFizzCharNum(value)) {
+    				assertThat(response,equalTo("buzz"));
+    			}else {
+    				assertThat(response,equalTo("fizz buzz"));
+    			}
+    		}else {
+    			if(containFizzCharNum(value)) {
+    				assertThat(response,equalTo("fizz"));
+        		}else if(containBuzzCharNum(value)) {
+        			assertThat(response,equalTo("buzz"));
+        		}else {
+        			assertThat(response,equalTo(Integer.toString(value)));
+        		}
+    		}
+    	}
+ 
     }
     
-//    
-//    @Test(expected = InvalidSumException.class)
-//    public void compute_sum_invalid() {
-//    	sum.compute(-10, 200);
-//    }
+    private boolean containBuzzCharNum(Integer number) {
+    	if(Integer.toString(number).indexOf(Integer.toString(FizzBuzzSolution.BUZZ))>-1) 
+    		return true ;
+    	
+    	return false ;
+    }
+    
+    private boolean containFizzCharNum(Integer number) {
+    	if(Integer.toString(number).indexOf(Integer.toString(FizzBuzzSolution.FIZZ))>-1) 
+    		return true ;
+    	
+    	return false ;
+    }
 }
 
