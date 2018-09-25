@@ -14,6 +14,7 @@ public class FizzBuzzSolution {
 
 	public static final int FIZZ = 3 ;
 	public static final int BUZZ = 5 ;
+	public static final int DELUXE = 10 ;
 	
 	private List<Integer> fizzList  ;
 	private List<Integer> buzzList  ;
@@ -22,6 +23,8 @@ public class FizzBuzzSolution {
 	
 	public static final String STR_FIZZ = "fizz" ;
 	public static final String STR_BUZZ = "buzz" ;
+	public static final String STR_DELUXE = "deluxe" ;
+	
 	
 	public FizzBuzzSolution() {
 		fizzList = getDivideByNumList(FIZZ);
@@ -68,6 +71,13 @@ public class FizzBuzzSolution {
     	return response.toString() ;
     }
 
+    private boolean isDeluxe(int value) {
+    	boolean deluxe = false ;
+    	if(value >= DELUXE) {
+    		deluxe = true ;
+    	}
+    	return deluxe ;
+    }
     
     private boolean containBuzzCharNum(Integer number) {
     	if(Integer.toString(number).indexOf(Integer.toString(BUZZ))>-1) 
