@@ -39,7 +39,7 @@ public class FizzBuzzSolution {
 	
 	public String fizzBuzz(Integer number) {
     	StringBuilder response = new StringBuilder();
-    	
+    	boolean standardNumber = false ;
     	
     	if((fizzBuzzList.contains(number)) || (containFizzCharNum(number) && containBuzzCharNum(number)) ){
     		response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
@@ -62,11 +62,17 @@ public class FizzBuzzSolution {
         		}else if(containBuzzCharNum(number)) {
         			response.append(STR_BUZZ);
         		}else {
+        			standardNumber = true ;
         			response.append(number);
         		}
         		
         	}
     	}
+    	
+    	if(!standardNumber)
+    		response.append((isDeluxe(number)) ? " deluxe" : "" );
+    	
+    	
     		
     	return response.toString() ;
     }
