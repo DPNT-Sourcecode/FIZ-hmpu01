@@ -30,6 +30,11 @@ public class FizzBuzzSolutionTest {
     }
     
     
+    @Test
+    public void compute() {
+        assertThat(fizzBuzz.fizzBuzz(-2), equalTo("-2"));
+    }
+    
 //    
 //    @Test(expected = InvalidSumException.class)
 //    public void compute_sum_invalid() {
