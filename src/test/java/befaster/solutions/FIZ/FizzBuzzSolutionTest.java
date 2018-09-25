@@ -6,6 +6,9 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class FizzBuzzSolutionTest {
     private FizzBuzzSolution fizzBuzz;
@@ -81,6 +84,15 @@ public class FizzBuzzSolutionTest {
     	}
     	
  
+    }
+    
+    @Test
+    public void testRegex() {
+    	 Pattern pattern = Pattern.compile("\\b(\\d)\\1+\\b");
+    	 
+    	 Matcher matcher = pattern.matcher("44444");
+    	 
+    	 assertThat(matcher.find(),equalTo(true));
     }
     
     private boolean isDeluxe(Integer number) {
