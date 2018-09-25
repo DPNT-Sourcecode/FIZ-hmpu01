@@ -19,7 +19,7 @@ public class HelloSolutionTest {
         assertThat(hello.hello(""),equalTo(""));
     }
     
-//    @Test(expected = InvalidSumException.class)
+//    @Test(expected = InvalidHelloException.class)
 //    public void compute_sum_invalid() {
 //    	sum.compute(-10, 200);
 //    }
