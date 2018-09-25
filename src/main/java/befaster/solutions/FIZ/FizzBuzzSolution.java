@@ -2,9 +2,9 @@ package befaster.solutions.FIZ;
 
 
 import befaster.runner.SolutionNotImplementedException;
-//- If the number is a multiple of three then you should write "fizz"
-//- If the number is a multiple of five then you should write "buzz"
-//- If the number is a multiple of both three and five then you should write "fizz buzz"
+//- A number is "fizz" if it is divisible by 3 or if it has a 3 in it
+//- A number is "buzz" if it is divisible by 5 or if it has a 5 in it
+//- A number can be both "fizz" and "buzz" at the same time. If this happens then write "fizz buzz"
 
 
 public class FizzBuzzSolution {
@@ -18,17 +18,41 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
     	StringBuilder response = new StringBuilder();
     	
-    	if((number.intValue() % FIZZ ==0) && (number.intValue() % BUZZ ==0)  ) {
-    		response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
-    	}else if( number.intValue() % FIZZ ==0) {
+    	
+//    	if((number.intValue() % FIZZ ==0) && (number.intValue() % BUZZ ==0)  ) {
+//    		response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+//    	}else if( number.intValue() % FIZZ ==0 || isFizz(number.intValue())) {
+//    		response.append(STR_FIZZ) ;
+//    	}else if( number.intValue() % BUZZ ==0 || isBuzz(number.intValue())) {
+//    		response.append(STR_BUZZ) ;
+//    	}else {
+//    		response.append(number);
+//    	}
+    	
+    	
+    	if( number.intValue() % FIZZ ==0 || isFizz(number.intValue())) {
     		response.append(STR_FIZZ) ;
-    	}else if( number.intValue() % BUZZ ==0) {
+    	}else if( number.intValue() % BUZZ ==0 || isBuzz(number.intValue())) {
     		response.append(STR_BUZZ) ;
     	}else {
     		response.append(number);
     	}
     		
     	return response.toString() ;
+    }
+    
+    private boolean isBuzz(Integer number) {
+    	if(Integer.toString(number).indexOf(Integer.toString(BUZZ))>-1) 
+    		return true ;
+    	
+    	return false ;
+    }
+    
+    private boolean isFizz(Integer number) {
+    	if(Integer.toString(number).indexOf(Integer.toString(FIZZ))>-1) 
+    		return true ;
+    	
+    	return false ;
     }
 
 }
