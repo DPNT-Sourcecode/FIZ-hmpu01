@@ -1,6 +1,5 @@
 package befaster.solutions.SUM;
 
-import befaster.runner.SolutionNotImplementedException;
 
 public class SumSolution {
 	
@@ -14,6 +13,13 @@ public class SumSolution {
 	
 	
 
+    /**
+     * Sum 2 integers
+     * 
+     * @param x a positive integer between 0-100
+     * @param y a positive integer between 0-100
+     * @return an Integer representing the sum of the two numbers
+     */
     public int compute(int x, int y) {
     	int sum = 0 ;
     	if(inBounds(x) && inBounds(y)) {
@@ -28,6 +34,12 @@ public class SumSolution {
     	return sum ;
     }
 
+    /**
+     * Validate value in bounds 
+     * 
+     * @param value
+     * @return
+     */
     private boolean inBounds(int value) {
     	boolean inBounds = false ;
     	if(value >= MIN_BOUNDS && value <= MAX_BOUNDS) {
