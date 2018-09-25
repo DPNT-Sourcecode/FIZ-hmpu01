@@ -17,7 +17,7 @@ public class FizzBuzzSolutionTest {
     @Test
     public void compute_fizzLoop() {
         for(int i=1 ; i<10000; i++) {
-        	System.out.println(fizzBuzz.fizzBuzz(i));
+        	System.out.println(i + " "+fizzBuzz.fizzBuzz(i));
         }
     }
 
