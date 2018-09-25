@@ -10,15 +10,22 @@ public class SumSolution {
 	// Max value
 	private static final int MAX_BOUNDS = 100 ;
 	
+	private static final String NL = System.getProperty("line.separator");
+	
+	
 
     public int compute(int x, int y) {
     	int sum = 0 ;
     	if(inBounds(x) && inBounds(y)) {
-    		
+    		sum = x + y ;
     	}else {
-    		throw new InvalidSumException("Invalid input values x:"+x+" y:"+y);
+    		StringBuilder errorMsg = new StringBuilder();
+    		errorMsg.append("Invalid input values x:").append(x);
+    		errorMsg.append(NL);
+    		errorMsg.append("y:").append(y);
+    		throw new InvalidSumException(errorMsg.toString());
     	}
-        throw new SolutionNotImplementedException();
+    	return sum ;
     }
 
     private boolean inBounds(int value) {
