@@ -11,12 +11,17 @@ public class SumSolutionTest {
 
     @Before
     public void setUp() {
-
-        sum = new SumSolution();
+    	sum = new SumSolution();
     }
 
     @Test
     public void compute_sum() {
         assertThat(sum.compute(1, 1), equalTo(2));
     }
+    
+    @Test(expected = InvalidSumException.class)
+    public void compute_sum_invalid() {
+    	sum.compute(-10, 200);
+    }
 }
+
