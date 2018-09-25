@@ -32,7 +32,7 @@ public class HelloSolution {
 
 			StringBuilder data = new StringBuilder();
 			Stream<String> lines = Files.lines(path);
-			lines.forEach(line -> data.append(line).append("\n"));
+			lines.forEach(line -> data.append(line));
 			lines.close();
 			
 			message = data.toString();
