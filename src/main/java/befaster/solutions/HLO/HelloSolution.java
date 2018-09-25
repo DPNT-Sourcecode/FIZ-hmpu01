@@ -6,7 +6,9 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 
@@ -15,12 +17,12 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class HelloSolution {
 	
-	private static final Logger LOGGER = LogManager.getLogger(HelloSolution.class.getName());
+	private static final Logger LOGGER = LogManager.getLogManager().getLogger(HelloSolution.class.getName());
 	
 	public final static String MESSAGE_FILE = "helloMsg.txt" ;
 	
 	public String hello(String friendName) {
-		throw new SolutionNotImplementedException();
+		return loadMessage() ;
 	}
 
 	private String loadMessage() throws InvalidHelloException {
@@ -32,12 +34,14 @@ public class HelloSolution {
 			Stream<String> lines = Files.lines(path);
 			lines.forEach(line -> data.append(line).append("\n"));
 			lines.close();
+			
+			message = data.toString();
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE,"Error locating file "+MESSAGE_FILE,e);
+			throw new InvalidHelloException("Error locating file "+MESSAGE_FILE,e);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE,"loadMessage error",e);
+			throw new InvalidHelloException("loadMessage error",e);
 		}
 		
 		return message ;
