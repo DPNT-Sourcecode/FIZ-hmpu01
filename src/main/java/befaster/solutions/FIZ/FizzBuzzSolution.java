@@ -38,7 +38,11 @@ public class FizzBuzzSolution {
 	
 	
 	public String fizzBuzz(Integer number) {
-    	StringBuilder response = new StringBuilder();
+		return computeFizzBuzz(number, true);
+    }
+	
+	public String computeFizzBuzz(Integer number, boolean deluxe) {
+		StringBuilder response = new StringBuilder();
     	boolean standardNumber = false ;
     	
     	if((fizzBuzzList.contains(number)) || (containFizzCharNum(number) && containBuzzCharNum(number)) ){
@@ -69,13 +73,13 @@ public class FizzBuzzSolution {
         	}
     	}
     	
-    	if(!standardNumber)
+    	if(!standardNumber && deluxe )
     		response.append((isDeluxe(number)) ? " deluxe" : "" );
     	
     	
     		
     	return response.toString() ;
-    }
+	}
 
     private boolean isDeluxe(int value) {
     	boolean deluxe = false ;
