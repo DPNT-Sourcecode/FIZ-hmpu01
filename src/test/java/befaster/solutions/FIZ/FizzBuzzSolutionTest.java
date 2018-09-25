@@ -16,8 +16,20 @@ public class FizzBuzzSolutionTest {
 
     @Test
     public void compute_fizzbuzz() {
+        assertThat(fizzBuzz.fizzBuzz(15), equalTo("fizz buzz"));
+    }
+    
+    @Test
+    public void compute_fizz() {
         assertThat(fizzBuzz.fizzBuzz(3), equalTo("fizz"));
     }
+    
+    @Test
+    public void compute_buzz() {
+        assertThat(fizzBuzz.fizzBuzz(5), equalTo("buzz"));
+    }
+    
+    
 //    
 //    @Test(expected = InvalidSumException.class)
 //    public void compute_sum_invalid() {
