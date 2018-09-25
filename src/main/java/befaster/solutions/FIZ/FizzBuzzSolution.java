@@ -19,18 +19,9 @@ public class FizzBuzzSolution {
     	StringBuilder response = new StringBuilder();
     	
     	
-//    	if((number.intValue() % FIZZ ==0) && (number.intValue() % BUZZ ==0)  ) {
-//    		response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
-//    	}else if( number.intValue() % FIZZ ==0 || isFizz(number.intValue())) {
-//    		response.append(STR_FIZZ) ;
-//    	}else if( number.intValue() % BUZZ ==0 || isBuzz(number.intValue())) {
-//    		response.append(STR_BUZZ) ;
-//    	}else {
-//    		response.append(number);
-//    	}
-    	
-    	
-    	if( number.intValue() % FIZZ ==0 || isFizz(number.intValue())) {
+    	if((number.intValue() % FIZZ ==0) && (number.intValue() % BUZZ ==0)  || isFizzBuzz(number) ) {
+    		response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+    	}else if( number.intValue() % FIZZ ==0 || isFizz(number.intValue())) {
     		response.append(STR_FIZZ) ;
     	}else if( number.intValue() % BUZZ ==0 || isBuzz(number.intValue())) {
     		response.append(STR_BUZZ) ;
@@ -50,6 +41,13 @@ public class FizzBuzzSolution {
     
     private boolean isFizz(Integer number) {
     	if(Integer.toString(number).indexOf(Integer.toString(FIZZ))>-1) 
+    		return true ;
+    	
+    	return false ;
+    }
+    
+    private boolean isFizzBuzz(Integer number) {
+    	if(isFizz(number) && isBuzz(number)) 
     		return true ;
     	
     	return false ;
