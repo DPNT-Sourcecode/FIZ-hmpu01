@@ -20,6 +20,16 @@ public class FizzBuzzSolutionTest {
 
     }
     
+    
+    
+//    [31mResult is: FAILED[m
+//                           Some requests have failed (21/45). Here are some of them:
+//                            - {"method":"fizz_buzz","params":[27],"id":"FIZ_R5_006"}, expected: "fizz", got: "fizz fake deluxe"
+//                            - {"method":"fizz_buzz","params":[129],"id":"FIZ_R5_007"}, expected: "fizz", got: "fizz fake deluxe"
+//                            - {"method":"fizz_buzz","params":[201],"id":"FIZ_R5_008"}, expected: "fizz", got: "fizz fake deluxe"
+//                           [31mYou have received a penalty of: 10 min[m
+//                           [34mThe round will restart now[m
+
    
     
     @Test

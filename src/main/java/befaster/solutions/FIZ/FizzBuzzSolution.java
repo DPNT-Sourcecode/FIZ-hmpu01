@@ -78,9 +78,9 @@ public class FizzBuzzSolution {
     	
     	if(!standardNumber && isDeluxe(number) ) {
     		if(response.length()==0) {
-    			response.append(STR_DELUXE);
+    			response.append(getDeluxeString(number));
     		}else {
-    			response.append(" ").append(STR_DELUXE);
+    			response.append(" ").append(getDeluxeString(number));
     		}
     	}
     		
