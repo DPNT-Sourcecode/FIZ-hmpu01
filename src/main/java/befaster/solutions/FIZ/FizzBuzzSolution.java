@@ -6,10 +6,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import befaster.runner.SolutionNotImplementedException;
-//- A number is "fizz" if it is divisible by 3 or if it has a 3 in it
-//- A number is "buzz" if it is divisible by 5 or if it has a 5 in it
-//- A number can be both "fizz" and "buzz" at the same time. If this happens then write "fizz buzz"
+//- The old rules for "deluxe" do not apply.
+//- A number is "fizz deluxe" if it is divisible by 3 AND it has a 3 in it
+//- A number is "buzz deluxe" if it is divisible by 5 AND it has a 5 in it
+//- We should still say "fake deluxe" if the "deluxe" number is odd
+//- A number can be "fizz", "buzz" and "deluxe" at the same time. If this happens then write "fizz buzz deluxe"
+//- All the previous rules for "fizz" and "buzz" are still valid
 
 
 public class FizzBuzzSolution {
