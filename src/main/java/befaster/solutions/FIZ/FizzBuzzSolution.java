@@ -95,6 +95,12 @@ public class FizzBuzzSolution {
 			response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
 		}
 		
+		// Validate fizz char & buzz char
+		else if(containFizzCharNum(number) && containBuzzCharNum(number)) {
+			response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+		}
+		
+		
 		// Validate fizz char 
 		else if(containFizzCharNum(number)) {
 			response.append(STR_FIZZ);
