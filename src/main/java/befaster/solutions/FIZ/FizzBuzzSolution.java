@@ -127,22 +127,18 @@ public class FizzBuzzSolution {
 		boolean div5 = false ;
 		
 		if(!(response.toString().indexOf("fizz buzz")>-1)) {
-			if(number % FIZZ ==0) {
+			if(number % FIZZ ==0 && response.toString().indexOf("fizz")==-1 ){
 				div3 = true ;
 				if(response.toString().indexOf("buzz")>-1 || response.toString().indexOf("buzz fake")>-1 || response.toString().indexOf("buzz deluxe")>-1) {
 					response.insert(0, "ossie fizz ");
 				}
-			}else if(number % BUZZ ==0) {
+			}
+			if(number % BUZZ ==0 && response.toString().indexOf("buzz")==-1) {
 				div5 = true ;
 				if(response.toString().indexOf("fizz") >-1 || response.toString().indexOf("fizz fake")>-1 || response.toString().indexOf("fizz deluxe")>-1) {
 					response.insert(4, " ossie buzz");
 				}
 			}
-		}
-		
-		
-		if(number.equals(546) || number.equals(30)) {
-			System.out.println(response.toString()+" div5"+div5+" div3"+div3);
 		}
 		
 		return response.toString() ;
