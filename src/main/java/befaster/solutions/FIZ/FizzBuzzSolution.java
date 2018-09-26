@@ -134,6 +134,10 @@ public class FizzBuzzSolution {
 			div5 = true ;
 		}
 		
+		if(number.equals(546) || number.equals(30)) {
+			System.out.println(response.toString()+" div5"+div5+" div3"+div3);
+		}
+		
 		return response.toString() ;
     }
 
