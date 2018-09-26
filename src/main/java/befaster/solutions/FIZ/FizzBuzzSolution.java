@@ -55,7 +55,12 @@ public class FizzBuzzSolution {
 	public String fizzBuzz(Integer number) {
 		StringBuilder response = new StringBuilder();
 		
-		
+		// Validate fizz buzz deluxe odd even
+		if(fizzDeluxeList.contains(number) && buzzDeluxeList.contains(number) && !isOdd(number)) {
+			response.append(STR_FIZZ).append(" ").append(STR_BUZZ).append(" ").append(STR_DELUXE);
+		}else if(fizzDeluxeList.contains(number) && buzzDeluxeList.contains(number) && isOdd(number)) {
+			response.append(STR_FIZZ).append(" ").append(STR_BUZZ).append(" ").append(STR_FAKE_DELUXE);
+		}
 		
 		return response.toString() ;
     }
