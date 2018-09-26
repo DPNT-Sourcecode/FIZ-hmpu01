@@ -53,53 +53,66 @@ public class FizzBuzzSolution {
 	
 	
 	public String fizzBuzz(Integer number) {
-		return computeFizzBuzz(number, true);
+		StringBuilder response = new StringBuilder();
+		
+		
+		
+		return response.toString() ;
     }
 	
-	public String computeFizzBuzz(Integer number, boolean deluxe) {
-		StringBuilder response = new StringBuilder();
-    	boolean standardNumber = false ;
-    	
-    	if((fizzBuzzList.contains(number)) || (containFizzCharNum(number) && containBuzzCharNum(number)) ){
-    		response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
-    	}else {
-    		if(fizzList.contains(number) ) {
-    			if(!containBuzzCharNum(number)) {
-    				response.append(STR_FIZZ);
-    			}else {
-    				response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
-    			}
-    		}else if( buzzList.contains(number)) {
-    			if(!containFizzCharNum(number)) {
-    				response.append(STR_BUZZ);
-    			}else {
-    				response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
-    			}
-        	}else {
-        		if(containFizzCharNum(number)) {
-        			response.append(STR_FIZZ);
-        		}else if(containBuzzCharNum(number)) {
-        			response.append(STR_BUZZ);
-        		}else if(!isDeluxe(number)) {
-        			standardNumber = true ;
-        			response.append(number);
-        		}
-        		
-        	}
-    	}
-    	
-    	if(!standardNumber && isDeluxe(number) ) {
-    		if(response.length()==0) {
-    			response.append(getDeluxeString(number));
-    		}else {
-    			response.append(" ").append(getDeluxeString(number));
-    		}
-    	}
-    		
-    		
-    	return response.toString() ;
-	}
+//	public String computeFizzBuzz(Integer number, boolean deluxe) {
+//		StringBuilder response = new StringBuilder();
+//    	boolean standardNumber = false ;
+//    	
+//    	if((fizzBuzzList.contains(number)) || (containFizzCharNum(number) && containBuzzCharNum(number)) ){
+//    		response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+//    	}else {
+//    		if(fizzList.contains(number) ) {
+//    			if(!containBuzzCharNum(number)) {
+//    				response.append(STR_FIZZ);
+//    			}else {
+//    				response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+//    			}
+//    		}else if( buzzList.contains(number)) {
+//    			if(!containFizzCharNum(number)) {
+//    				response.append(STR_BUZZ);
+//    			}else {
+//    				response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+//    			}
+//        	}else {
+//        		if(containFizzCharNum(number)) {
+//        			response.append(STR_FIZZ);
+//        		}else if(containBuzzCharNum(number)) {
+//        			response.append(STR_BUZZ);
+//        		}else if(!isDeluxe(number)) {
+//        			standardNumber = true ;
+//        			response.append(number);
+//        		}
+//        		
+//        	}
+//    	}
+//    	
+//    	if(!standardNumber && isDeluxe(number) ) {
+//    		if(response.length()==0) {
+//    			response.append(getDeluxeString(number));
+//    		}else {
+//    			response.append(" ").append(getDeluxeString(number));
+//    		}
+//    	}
+//    		
+//    		
+//    	return response.toString() ;
+//	}
 
+	
+	private boolean isOdd(int value) {
+		boolean odd = false ; ;
+		if(value % 2 !=0) {
+			odd = true ;
+		}
+		return odd ;
+	}
+	
 	private String getDeluxeString(int value) {
 		String message = null ;
 		if(value % 2 ==0) {
@@ -113,11 +126,11 @@ public class FizzBuzzSolution {
 	
     private boolean isDeluxe(int value) {
     	boolean deluxe = false ;
-    	Matcher matcher = this.deluxePattern.matcher(Integer.toString(value));
-    	
-    	if(value >= DELUXE && matcher.find()) {
-    		deluxe = true ;
-    	}
+//    	Matcher matcher = this.deluxePattern.matcher(Integer.toString(value));
+//    	
+//    	if(value >= DELUXE && matcher.find()) {
+//    		deluxe = true ;
+//    	}
     			
     	return deluxe ;
     }
