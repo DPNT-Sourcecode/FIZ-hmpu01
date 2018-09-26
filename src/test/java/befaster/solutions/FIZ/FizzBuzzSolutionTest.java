@@ -20,14 +20,12 @@ public class FizzBuzzSolutionTest {
 
     }
     
-    
 //    
-//    Some requests have failed (18/45). Here are some of them:
-//    	 - {"method":"fizz_buzz","params":[13],"id":"FIZ_R5_010"}, expected: "fizz", got: "13"
-//    	 - {"method":"fizz_buzz","params":[43],"id":"FIZ_R5_011"}, expected: "fizz", got: "43"
-//    	 - {"method":"fizz_buzz","params":[163],"id":"FIZ_R5_012"}, expected: "fizz", got: "163"
+//    Some requests have failed (13/45). Here are some of them:
+//    	 - {"method":"fizz_buzz","params":[1000],"id":"FIZ_R5_021"}, expected: "buzz", got: "1000"
+//    	 - {"method":"fizz_buzz","params":[1400],"id":"FIZ_R5_022"}, expected: "buzz", got: "1400"
+//    	 - {"method":"fizz_buzz","params":[563],"id":"FIZ_R5_030"}, expected: "fizz buzz", got: "fizz"
 //    	[31mYou have received a penalty of: 10 min[m
-//    	[34mThe round will restart now[m
 
    
     

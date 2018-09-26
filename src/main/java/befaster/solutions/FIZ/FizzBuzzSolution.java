@@ -80,6 +80,21 @@ public class FizzBuzzSolution {
 		else if(fizzList.contains(number)) {
 			response.append(STR_FIZZ);
 		}
+		// Validate buzz 
+		else if(buzzList.contains(number)) {
+			response.append(STR_BUZZ);
+		}
+		
+		// Validate fizz & buzz char
+		else if(fizzList.contains(number) && containBuzzCharNum(number)) {
+			response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+		}
+		
+		// Validate buzz & fizz char
+		else if(buzzList.contains(number) && containFizzCharNum(number)) {
+			response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+		}
+		
 		// Validate fizz char 
 		else if(containFizzCharNum(number)) {
 			response.append(STR_FIZZ);
