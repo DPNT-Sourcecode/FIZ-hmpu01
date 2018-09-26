@@ -20,7 +20,7 @@ public class FizzBuzzSolution {
 	public static final String STR_FIZZ = "fizz" ;
 	public static final String STR_BUZZ = "buzz" ;
 	public static final String STR_DELUXE = "deluxe" ;
-	
+	public static final String STR_FAKE_DELUXE = "fake deluxe" ;
 	
 	private List<Integer> fizzList  ;
 	private List<Integer> buzzList  ;
@@ -78,9 +78,9 @@ public class FizzBuzzSolution {
     	
     	if(!standardNumber && isDeluxe(number) ) {
     		if(response.length()==0) {
-    			response.append(STR_DELUXE);
+    			response.append(getDeluxeString(number));
     		}else {
-    			response.append(" ").append(STR_DELUXE);
+    			response.append(" ").append(getDeluxeString(number));
     		}
     	}
     		
@@ -88,6 +88,17 @@ public class FizzBuzzSolution {
     	return response.toString() ;
 	}
 
+	private String getDeluxeString(int value) {
+		String message = null ;
+		if(value % 2 ==0) {
+			message = STR_DELUXE ;
+		}else {
+			message = STR_FAKE_DELUXE ;
+		}
+		
+		return message ;
+	}
+	
     private boolean isDeluxe(int value) {
     	boolean deluxe = false ;
     	Matcher matcher = this.deluxePattern.matcher(Integer.toString(value));
