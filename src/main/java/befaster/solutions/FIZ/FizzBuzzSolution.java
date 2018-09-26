@@ -3,8 +3,6 @@ package befaster.solutions.FIZ;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 //- The old rules for "deluxe" do not apply.
 //- A number is "fizz deluxe" if it is divisible by 3 AND it has a 3 in it
@@ -91,52 +89,8 @@ public class FizzBuzzSolution {
 		
 		return response.toString() ;
     }
-	
-//	public String computeFizzBuzz(Integer number, boolean deluxe) {
-//		StringBuilder response = new StringBuilder();
-//    	boolean standardNumber = false ;
-//    	
-//    	if((fizzBuzzList.contains(number)) || (containFizzCharNum(number) && containBuzzCharNum(number)) ){
-//    		response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
-//    	}else {
-//    		if(fizzList.contains(number) ) {
-//    			if(!containBuzzCharNum(number)) {
-//    				response.append(STR_FIZZ);
-//    			}else {
-//    				response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
-//    			}
-//    		}else if( buzzList.contains(number)) {
-//    			if(!containFizzCharNum(number)) {
-//    				response.append(STR_BUZZ);
-//    			}else {
-//    				response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
-//    			}
-//        	}else {
-//        		if(containFizzCharNum(number)) {
-//        			response.append(STR_FIZZ);
-//        		}else if(containBuzzCharNum(number)) {
-//        			response.append(STR_BUZZ);
-//        		}else if(!isDeluxe(number)) {
-//        			standardNumber = true ;
-//        			response.append(number);
-//        		}
-//        		
-//        	}
-//    	}
-//    	
-//    	if(!standardNumber && isDeluxe(number) ) {
-//    		if(response.length()==0) {
-//    			response.append(getDeluxeString(number));
-//    		}else {
-//    			response.append(" ").append(getDeluxeString(number));
-//    		}
-//    	}
-//    		
-//    		
-//    	return response.toString() ;
-//	}
 
-	
+
 	private boolean isOdd(int value) {
 		boolean odd = false ; ;
 		if(value % 2 !=0) {
@@ -145,27 +99,6 @@ public class FizzBuzzSolution {
 		return odd ;
 	}
 	
-	private String getDeluxeString(int value) {
-		String message = null ;
-		if(value % 2 ==0) {
-			message = STR_DELUXE ;
-		}else {
-			message = STR_FAKE_DELUXE ;
-		}
-		
-		return message ;
-	}
-	
-    private boolean isDeluxe(int value) {
-    	boolean deluxe = false ;
-//    	Matcher matcher = this.deluxePattern.matcher(Integer.toString(value));
-//    	
-//    	if(value >= DELUXE && matcher.find()) {
-//    		deluxe = true ;
-//    	}
-    			
-    	return deluxe ;
-    }
     
     private boolean containBuzzCharNum(Integer number) {
     	if(Integer.toString(number).indexOf(Integer.toString(BUZZ))>-1) 
@@ -186,15 +119,6 @@ public class FizzBuzzSolution {
     	List<Integer> divideByList = new ArrayList<Integer>() ;
     	for(int i=1; i <10000;i++) {
     		if(i%number==0)
-    			divideByList.add(i);
-    	}
-    	return divideByList ;
-    }
-    
-    private List<Integer> getDivideBy3And5List(){
-    	List<Integer> divideByList = new ArrayList<Integer>() ;
-    	for(int i=1; i <10000;i++) {
-    		if(i % FizzBuzzSolution.FIZZ ==0 && i % FizzBuzzSolution.BUZZ ==0 )
     			divideByList.add(i);
     	}
     	return divideByList ;
