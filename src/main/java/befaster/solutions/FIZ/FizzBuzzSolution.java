@@ -86,14 +86,6 @@ public class FizzBuzzSolution {
 		else if(fizzList.contains(number) && buzzList.contains(number)) {
 			response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
 		}
-		// Validate fizz 
-		else if(fizzList.contains(number)) {
-			response.append(STR_FIZZ);
-		}
-		// Validate buzz 
-		else if(buzzList.contains(number)) {
-			response.append(STR_BUZZ);
-		}
 		
 		// Validate fizz & buzz char
 		else if(fizzList.contains(number) && containBuzzCharNum(number)) {
@@ -110,6 +102,14 @@ public class FizzBuzzSolution {
 			response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
 		}
 		
+		// Validate fizz 
+		else if(fizzList.contains(number)) {
+			response.append(STR_FIZZ);
+		}
+		// Validate buzz 
+		else if(buzzList.contains(number)) {
+			response.append(STR_BUZZ);
+		}
 		
 		// Validate fizz char 
 		else if(containFizzCharNum(number)) {

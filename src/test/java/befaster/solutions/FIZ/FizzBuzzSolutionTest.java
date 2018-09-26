@@ -29,13 +29,13 @@ public class FizzBuzzSolutionTest {
 
    
     
+//    @Test
+//    public void compute_546(){
+//    	System.out.println(546 +" "+fizzBuzz.fizzBuzz(546));
+//    }
+    
+    
     @Test
-    public void compute_546(){
-    	System.out.println(546 +" "+fizzBuzz.fizzBuzz(546));
-    }
-    
-    
-    //@Test
     public void printoOut(){
     	for(int i=1; i <10000;i++) {
     		System.out.println(i+" "+fizzBuzz.fizzBuzz(i));
