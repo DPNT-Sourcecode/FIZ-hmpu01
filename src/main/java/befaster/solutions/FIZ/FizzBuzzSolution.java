@@ -126,7 +126,7 @@ public class FizzBuzzSolution {
 		boolean div3 = false ;
 		boolean div5 = false ;
 		
-		if(response.toString().indexOf("fizz buzz")>-1) {
+		if(!(response.toString().indexOf("fizz buzz")>-1)) {
 			if(number % FIZZ ==0) {
 				div3 = true ;
 				if(response.toString().indexOf("buzz")>-1 || response.toString().indexOf("buzz fake")>-1 || response.toString().indexOf("buzz deluxe")>-1) {
