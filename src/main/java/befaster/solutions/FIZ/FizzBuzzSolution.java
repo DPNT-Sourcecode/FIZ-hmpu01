@@ -37,6 +37,8 @@ public class FizzBuzzSolution {
 		fizzList.removeAll(fizzBuzzList);
 		buzzList.removeAll(fizzBuzzList);
 		
+		//create lists where number contains 3 or 5
+		
 	}
 	
 	
