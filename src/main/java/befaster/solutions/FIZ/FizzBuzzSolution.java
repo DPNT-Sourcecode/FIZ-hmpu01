@@ -74,8 +74,20 @@ public class FizzBuzzSolution {
 			response.append(STR_BUZZ).append(" ").append(STR_FAKE_DELUXE);
 		}
 		
-		
-		
+		// Validate fizz buzz
+		else if(fizzList.contains(number) && buzzList.contains(number)) {
+			response.append(STR_FIZZ).append(" ").append(STR_BUZZ);
+		}
+		// Validate fizz 
+		else if(fizzList.contains(number)) {
+			response.append(STR_FIZZ);
+		}
+		// Validate buzz 
+		else if(buzzList.contains(number)) {
+			response.append(STR_BUZZ);
+		}else {
+			response.append(number);
+		}
 		
 		return response.toString() ;
     }
