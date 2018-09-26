@@ -18,7 +18,6 @@ public class FizzBuzzSolution {
 
 	public static final int FIZZ = 3 ;
 	public static final int BUZZ = 5 ;
-	public static final int DELUXE = 10 ;
 	public static final String STR_FIZZ = "fizz" ;
 	public static final String STR_BUZZ = "buzz" ;
 	public static final String STR_DELUXE = "deluxe" ;
@@ -26,20 +25,29 @@ public class FizzBuzzSolution {
 	
 	private List<Integer> fizzList  ;
 	private List<Integer> buzzList  ;
-	private List<Integer> fizzBuzzList  ;
-	private Pattern deluxePattern = Pattern.compile("\\b(\\d)\\1+\\b");
+	private List<Integer> fizzDeluxeList  ;
+	private List<Integer> buzzDeluxeList  ;
 	
 	
 	
 	public FizzBuzzSolution() {
 		fizzList = getDivideByNumList(FIZZ);
 		buzzList = getDivideByNumList(BUZZ);
-		fizzBuzzList = getDivideBy3And5List();
 		
-		fizzList.removeAll(fizzBuzzList);
-		buzzList.removeAll(fizzBuzzList);
+		fizzDeluxeList = new ArrayList<Integer>();
+		buzzDeluxeList = new ArrayList<Integer>();
 		
-		//create lists where number contains 3 or 5
+		getDivideByNumList(FIZZ).forEach(value ->{
+			if(containFizzCharNum(value)) {
+				fizzDeluxeList.add(value);
+			}
+		});
+		
+		getDivideByNumList(BUZZ).forEach(value ->{
+			if(containBuzzCharNum(value)) {
+				buzzDeluxeList.add(value);
+			}
+		});
 		
 	}
 	
