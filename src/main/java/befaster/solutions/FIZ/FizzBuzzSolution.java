@@ -61,6 +61,15 @@ public class FizzBuzzSolution {
 		}else if(fizzDeluxeList.contains(number) && buzzDeluxeList.contains(number) && isOdd(number)) {
 			response.append(STR_FIZZ).append(" ").append(STR_BUZZ).append(" ").append(STR_FAKE_DELUXE);
 		}
+		// Validate fizz deluxe odd even
+		else if(fizzDeluxeList.contains(number) && !isOdd(number)) {
+			response.append(STR_FIZZ).append(" ").append(STR_DELUXE);
+		}else if(fizzDeluxeList.contains(number) && isOdd(number)) {
+			response.append(STR_FIZZ).append(" ").append(STR_FAKE_DELUXE);
+		}
+		
+		
+		
 		
 		return response.toString() ;
     }
