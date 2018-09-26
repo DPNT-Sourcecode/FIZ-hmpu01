@@ -30,6 +30,12 @@ public class FizzBuzzSolutionTest {
    
     
     @Test
+    public void compute_30(){
+    	System.out.println(30 +" "+fizzBuzz.fizzBuzz(30));
+    }
+    
+    
+    @Test
     public void printoOut(){
     	for(int i=1; i <10000;i++) {
     		System.out.println(i+" "+fizzBuzz.fizzBuzz(i));

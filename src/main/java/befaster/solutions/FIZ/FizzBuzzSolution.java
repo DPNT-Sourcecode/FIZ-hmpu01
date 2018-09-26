@@ -50,6 +50,16 @@ public class FizzBuzzSolution {
 	}
 	
 	
+//  
+//  Some requests have failed (8/45). Here are some of them:
+//  	 - {"method":"fizz_buzz","params":[546],"id":"FIZ_R5_033"}, expected: "fizz buzz", got: "fizz"
+//  	 - {"method":"fizz_buzz","params":[1758],"id":"FIZ_R5_034"}, expected: "fizz buzz", got: "fizz"
+//  	 - {"method":"fizz_buzz","params":[30],"id":"FIZ_R5_038"}, expected: "fizz buzz deluxe", got: "fizz deluxe"
+//  	[31mYou have received a penalty of: 10 min[m
+//  	[34mThe round will restart now[m
+
+	
+	
 	public String fizzBuzz(Integer number) {
 		StringBuilder response = new StringBuilder();
 		
