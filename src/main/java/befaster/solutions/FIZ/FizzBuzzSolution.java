@@ -68,7 +68,7 @@ public class FizzBuzzSolution {
         			response.append(STR_FIZZ);
         		}else if(containBuzzCharNum(number)) {
         			response.append(STR_BUZZ);
-        		}else if(!isDeluxe(number)) {
+        		}else{
         			standardNumber = true ;
         			response.append(number);
         		}
@@ -76,7 +76,7 @@ public class FizzBuzzSolution {
         	}
     	}
     	
-    	if(!standardNumber && isDeluxe(number) ) {
+    	if(!standardNumber) {
     		if(response.length()==0) {
     			response.append(getDeluxeString(number));
     		}else {
