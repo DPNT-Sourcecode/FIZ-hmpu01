@@ -130,13 +130,13 @@ public class FizzBuzzSolution {
 			if(number % FIZZ ==0 && response.toString().indexOf("fizz")==-1 ){
 				div3 = true ;
 				if(response.toString().indexOf("buzz")>-1 || response.toString().indexOf("buzz fake")>-1 || response.toString().indexOf("buzz deluxe")>-1) {
-					response.insert(0, "ossie fizz ");
+					response.insert(0, "fizz ");
 				}
 			}
 			if(number % BUZZ ==0 && response.toString().indexOf("buzz")==-1) {
 				div5 = true ;
 				if(response.toString().indexOf("fizz") >-1 || response.toString().indexOf("fizz fake")>-1 || response.toString().indexOf("fizz deluxe")>-1) {
-					response.insert(4, " ossie buzz");
+					response.insert(4, " buzz");
 				}
 			}
 		}
