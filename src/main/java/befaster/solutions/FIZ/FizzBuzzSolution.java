@@ -128,10 +128,14 @@ public class FizzBuzzSolution {
 		
 		if(getDivideByNumList(FIZZ).contains(number)) {
 			div3 = true ;
-		}
-		
-		if(getDivideByNumList(BUZZ).contains(number)) {
+			if(response.toString().indexOf("buzz")>-1 || response.toString().indexOf("buzz fake")>-1 || response.toString().indexOf("buzz deluxe")>-1) {
+				response.insert(0, "ossie fizz ");
+			}
+		}else if(getDivideByNumList(BUZZ).contains(number)) {
 			div5 = true ;
+			if(response.toString().indexOf("fizz") >-1 || response.toString().indexOf("fizz fake")>-1 || response.toString().indexOf("fizz deluxe")>-1) {
+				response.insert(4, " ossie buzz");
+			}
 		}
 		
 		if(number.equals(546) || number.equals(30)) {
