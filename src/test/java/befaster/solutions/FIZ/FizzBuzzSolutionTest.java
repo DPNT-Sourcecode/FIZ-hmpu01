@@ -20,21 +20,15 @@ public class FizzBuzzSolutionTest {
 
     }
     
+   
+    
     @Test
     public void printoOut(){
     	for(int i=1; i <10000;i++) {
     		System.out.println(i+" "+fizzBuzz.fizzBuzz(i));
-    		//testValue(i,fizzBuzz.fizzBuzz(i));
+    		testValue(i,fizzBuzz.fizzBuzz(i));
     	}
     }
-    
-//    @Test
-//    public void printoOut(){
-//    	for(int i=1; i <10000;i++) {
-//    		System.out.println(i+" "+fizzBuzz.fizzBuzz(i));
-//    		testValue(i,fizzBuzz.fizzBuzz(i));
-//    	}
-//    }
     
     private void testValue(int value, String response){
     	if(isDeluxe(value)) {
@@ -43,23 +37,23 @@ public class FizzBuzzSolutionTest {
         	}else {
         		if(value % 3 ==0) {
         			if(!containBuzzCharNum(value)) {
-        				assertThat(response,equalTo("fizz deluxe"));
+        				assertThat(response,equalTo("fizz "+getDeluxeString(value)+"deluxe"));
         			}else {
-        				assertThat(response,equalTo("fizz buzz deluxe"));
+        				assertThat(response,equalTo("fizz buzz "+getDeluxeString(value)+"deluxe"));
         			}
         		}else if(value % 5 ==0) {
         			if(!containFizzCharNum(value)) {
-        				assertThat(response,equalTo("buzz deluxe"));
+        				assertThat(response,equalTo("buzz "+getDeluxeString(value)+"deluxe"));
         			}else {
-        				assertThat(response,equalTo("fizz buzz deluxe"));
+        				assertThat(response,equalTo("fizz buzz "+getDeluxeString(value)+"deluxe"));
         			}
         		}else {
         			if(containFizzCharNum(value)) {
-        				assertThat(response,equalTo("fizz deluxe"));
+        				assertThat(response,equalTo("fizz "+getDeluxeString(value)+"deluxe"));
             		}else if(containBuzzCharNum(value)) {
-            			assertThat(response,equalTo("buzz deluxe"));
+            			assertThat(response,equalTo("buzz "+getDeluxeString(value)+"deluxe"));
             		}else {
-            			assertThat(response,equalTo("deluxe"));
+            			assertThat(response,equalTo(getDeluxeString(value)+"deluxe"));
             		}
         		}
         	}
