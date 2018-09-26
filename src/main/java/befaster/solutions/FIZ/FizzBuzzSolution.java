@@ -80,10 +80,15 @@ public class FizzBuzzSolution {
 		else if(fizzList.contains(number)) {
 			response.append(STR_FIZZ);
 		}
-		// Validate buzz 
-		else if(buzzList.contains(number)) {
+		// Validate fizz char 
+		else if(containFizzCharNum(number)) {
+			response.append(STR_FIZZ);
+		}
+		// Validate buzz char 
+		else if(containBuzzCharNum(number)) {
 			response.append(STR_BUZZ);
-		}else {
+		}
+		else {
 			response.append(number);
 		}
 		
