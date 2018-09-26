@@ -123,6 +123,17 @@ public class FizzBuzzSolution {
 			response.append(number);
 		}
 		
+		boolean div3 = false ;
+		boolean div5 = false ;
+		
+		if(getDivideByNumList(FIZZ).contains(number)) {
+			div3 = true ;
+		}
+		
+		if(getDivideByNumList(BUZZ).contains(number)) {
+			div5 = true ;
+		}
+		
 		return response.toString() ;
     }
 
